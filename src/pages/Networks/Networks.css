@@ -1,0 +1,35 @@
+.networks-container {
+  @apply w-full px-8 py-16 min-h-screen text-gray-300;
+}
+
+.section-title {
+  @apply text-2xl font-semibold pb-2 border-b border-gray-600 mb-8 text-gray-100;
+}
+
+.section {
+  @apply mt-8;
+}
+
+.cards-container {
+  @apply flex flex-wrap gap-4 overflow-hidden justify-start pt-8;
+}
+
+.organization-card, .link-card {
+  @apply flex flex-col items-center max-w-[7rem]  overflow-hidden;
+}
+
+.name {
+  @apply text-sm underline w-full text-center cursor-pointer text-ellipsis whitespace-nowrap ;
+}
+
+.email, .type {
+  @apply text-xs text-ellipsis w-full text-center whitespace-nowrap ;
+}
+
+.placeholder-text {
+  @apply text-gray-500;
+}
+
+.avatar{
+    @apply cursor-pointer hover:opacity-[.8] duration-300 cursor-pointer;
+}

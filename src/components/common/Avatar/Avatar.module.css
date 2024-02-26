@@ -1,0 +1,13 @@
+.container {
+    @apply relative  rounded-full  text-white text-center w-24 h-24;
+  }
+
+.container > div{
+  @apply rounded-full overflow-hidden;
+}
+
+  /* .container::before {
+    content: '';
+    @apply absolute top-[-8px] left-[50%] w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-gray-600;
+    transform: translateX(-50%);
+  } */

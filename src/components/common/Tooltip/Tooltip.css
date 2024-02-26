@@ -1,0 +1,22 @@
+/* Assuming you're adding this to a file that's processed by Tailwind CSS, e.g., `tailwind.css` */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .tooltip-container {
+    @apply relative inline-block;
+  }
+
+  .tooltip-text {
+    @apply invisible absolute bg-black text-white text-center rounded-md p-2 z-10 max-w-xs transition-opacity opacity-0 -translate-x-1/2 left-1/2 whitespace-nowrap;
+    width: max-content; /* Tailwind doesn't have a utility for max-content width, so we keep it. */
+    bottom: 125%; /* Tailwind doesn't have a utility for this specific value, so we keep it. */
+    /* For properties without direct Tailwind equivalents, you might have to use inline styles or keep them as is. */
+  }
+
+  /* Tailwind does not support hover-dependent visibility changes with @apply directly in CSS for pseudo-classes like `hover:`. */
+  /* You will need to control visibility using JavaScript or inline styles in your React component. */
+}
+
+/* Since @apply does not support pseudo-elements like ::after, you would need to manually handle it outside of Tailwind's @apply. */

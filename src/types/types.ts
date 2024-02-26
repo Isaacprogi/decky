@@ -1,3 +1,4 @@
+import { IconType } from 'react-icons';
 import { Dispatch } from "react";
 
 export interface Task {
@@ -9,11 +10,12 @@ export interface Task {
 }
 export interface Book {
   _id: string;
-  author: string;
   title: string;
-  file: string;
-  description: string;
-  image:string,
+  author: string;
+  category:string;
+  filename: string;
+  description?: string;
+  image?:string,
 }
 
 export interface addTaskType {
@@ -37,6 +39,8 @@ export interface collectionState {
 }
 
 
+
+
 export type TaskAction =
   | { type: "SET_TASKS"; payload: Task[] }
   | { type: "SET_CURRENT_TASK"; payload: Task }
@@ -51,6 +55,7 @@ export type CollectionAction =
 
 export type BookAction =
   | { type: "SET"; payload: Book[] }
+  | { type: "GET_BOOK"; payload: Book }
 
 
   export type taskError = {
@@ -67,8 +72,9 @@ export type BookAction =
   }
 
   export type bookError = {
-    getBooks: string,
-    searchBooks:string
+    getBooks: string;
+    searchBooks:string;
+    getBook:string;
   }
 
   export type taskLoading = {
@@ -79,8 +85,9 @@ export type BookAction =
   }
 
   export type bookLoading = {
-    getBooks: boolean,
-    searchBooks:boolean
+    getBooks: boolean;
+    searchBooks:boolean;
+    getBook:boolean;
   }
 
   export type collectionLoading = {
@@ -124,6 +131,7 @@ export type BookAction =
     error: bookError;
     dispatch: Dispatch<BookAction>;
     getBooks: () => void;
+    getBook:(id:string)=>void
     searchBooks: ({category,searchValue}:{category?:string,searchValue?:string}) => void;
   }
 
@@ -131,6 +139,7 @@ export type BookAction =
 export interface RegisterData {
   fullName: string;
   email: string;
+  course:string;
   password: string;
   confirmPassword: string;
   avatar: string;
@@ -143,9 +152,11 @@ export interface LoginData {
 
 export interface User {
   id?: string,
-  fullName: string,
-  email: string,
+  fullName?: string,
+  email?: string,
+  course?:string,
   avatar: string,
+  pro?:boolean,
 }
 
 export type authError = {
@@ -154,17 +165,30 @@ export type authError = {
   logout: string, 
   refresh: string
 }
+export type authLoading = {
+  login: boolean
+  register: boolean,
+  logout: boolean, 
+  refresh: boolean
+}
 
 
 export interface AuthContextType {
   user: User
   token: string | undefined,
   error: authError,
+  loading:authLoading,
   setError: React.Dispatch<React.SetStateAction<{
     login: string;
     register: string;
     refresh: string;
     logout: string;
+  }>>
+  setLoading: React.Dispatch<React.SetStateAction<{
+    login: boolean;
+    register: boolean;
+    refresh: boolean;
+    logout: boolean;
   }>>
   login: (userData: LoginData) => void;
   register: (userData: RegisterData) => void;
@@ -176,3 +200,40 @@ export interface HeaderContextProps {
   active: boolean
   setActive: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+export interface FormData {
+  type: string;
+  email: string;
+  verificationCode: string;
+  name: string;
+  password: string;
+  confirmPassword: string;
+}
+
+export interface NavOption {
+  icon: IconType;
+  label: string;
+  to: string;
+}
+
+
+export interface Organization {
+  id:string;
+  name:string;
+  email:string,
+  avatar:string;
+}
+
+export interface Link {
+  id:string,
+  name:string;
+  category:'organization' | 'individual'
+  type:'project' | "task"
+  email:string;
+  link:string;
+}
+
+
+
+
+

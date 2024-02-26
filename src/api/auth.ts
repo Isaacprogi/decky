@@ -1,11 +1,11 @@
 import axios from "axios";
 import { RegisterData,LoginData  } from "../types/types";
 
-const baseUrl: string = 'http://localhost:4000';
+const baseUrl: string = 'http://localhost:4000/api';
 
 const api = axios.create({
   baseURL: baseUrl,
-  withCredentials: true,
+  withCredentials:true
 });
 
 export const loginApi = async (user: LoginData): Promise<any> => {

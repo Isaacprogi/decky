@@ -9,7 +9,7 @@
 @tailwind utilities;
 
 body{
-  background-color: rgb(235, 226, 226);
+  background-color: rgb(255, 255, 255);
 }
 
 .nav-bar{
