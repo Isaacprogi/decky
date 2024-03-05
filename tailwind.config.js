@@ -7,12 +7,16 @@ export default {
   darkMode: ['class', '[data-mode="dark"]'],
   theme: {
     extend: {
-      colors:{
-        background:"rgba(var(--grape))",
-        ujk:"rgba(var(--grape))",
-        grape:"rgba(var(--grape))",
-        grape:"rgba(var(--grape))"
-      }
+      colors: {
+        b1: 'var(--b1)',
+        b2: 'var(--b2)',
+        b3: 'var(--b3)',
+        b4: 'var(--b4)',
+        t1: 'var(--t1)',
+        t2: 'var(--t2)',
+        t3: 'var(--t3)',
+        l1: 'var(--l1)',
+      },
     },
   },
   plugins: [],

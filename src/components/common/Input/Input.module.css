@@ -8,6 +8,6 @@
   }
   
   .input {
-    @apply w-full px-3  py-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50;
+    @apply w-full px-3 bg-gray-800 text-white py-2 border border-gray-300 rounded-md shadow-sm ;
   }
   

@@ -42,5 +42,65 @@
       "status": "Completed",
       "dueDate": "2023-12-02T02:52:22.130Z"
     }
+  ],
+  "notes": [
+    {
+      "id": "1",
+      "category": "single",
+      "title": "Weekly Goals",
+      "content": "Finish the React project, start learning about Redux, and jog in the morning.kdkdkdkkkkkpp rkrrk rkrkr th eau that we ought to live out lives and make a whole new meaning out of the thongddkdkkkdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+      "updatedAt": "2/26/3024",
+      "sections": [
+        {
+          "id": "1",
+          "title": "Julia",
+          "owner":"chinedu",
+          "content": "kkkkkkkkkkkkkkkkkkkkkk",
+          "updatedAt": "2/26/3024"
+        },
+        {
+          "id": "2",
+          "title": "Rivers",
+          "owner":"Emmanuel",
+          "content": "Finish the React project, start learning about Redux, and jog in the morning.kdkdkdkkkkkpp rkrrk rkrkr th eau that we ought to live out lives and make a whole new meaning out of the thongddkdkkkdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+          "updatedAt": "2/26/3024"
+        },
+        {
+          "id": "3",
+          "title": "Famzy",
+          "owner":"John",
+          "content": "Finish the React project, start learning about Redux, and jog in the morning.kdkdkdkkkkkpp rkrrk rkrkr th eau that we ought to live out lives and make a whole new meaning out of the thongddkdkkkdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+          "updatedAt": "2/26/3024"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "group",
+      "title": "Weekly Goals",
+      "content": "Finish the React project, start learning about Redux, and jog in the morning.l;ml;",
+      "updatedAt": "2/26/3024"
+    },
+    {
+      "id": "3",
+      "category": "group",
+      "title": "Weekly Goals",
+      "content": "Finish the React project, start learning about Redux, and jog in the morning.",
+      "updatedAt": "2/26/3024"
+    },
+    {
+      "id": "4",
+      "category": "group",
+      "title": "Weekly Goals",
+      "content": "Finish the React project, start learning about Redux, and jog in the morning.",
+      "updatedAt": "2/26/3024"
+    },
+    {
+      "id": "5",
+      "category": "single",
+      "title": "Weekly Goals",
+      "content": "Finish the React project, start learning about Redux, and jog in the morning.",
+      "updatedAt": "2/26/3024"
+    }
   ]
 }

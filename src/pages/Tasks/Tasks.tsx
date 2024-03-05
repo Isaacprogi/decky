@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Button from '../../Components/common/Button/Button';
+import { MdOutlineAddToQueue } from 'react-icons/md';
 
 interface Task {
   id: number;
@@ -28,8 +30,9 @@ const Tasks = () => {
     <div className='w-full h-full bg-gray-800 overflow-y-auto'>
       <div className="bg-gray-700 w-full min-h-full px-4 py-8">
         
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold text-gray-100">Tasks</h2>
+         <div className="mb-8 flex w-full items-center justify-between">
+          <h2 className="text-2xl font-semibold text-gray-100">Notes</h2>
+          <Button onClick={handleNewNote} customStyle="mr-[4rem]" text="New" icon={MdOutlineAddToQueue} />
         </div>
 
         <div className="flex flex-col">

@@ -88,87 +88,51 @@ const HomePage = () => {
 
 
   return (
-    <div className='w-full h-full bg-gray-800 overflow-y-auto'>
-      <div className="bg-gray-700 w-full min-h-full px-4 py-8">
-
+    <div className='w-full h-full bg-b1 overflow-y-auto'>
+      <div className="bg-b2 w-full min-h-full px-4 py-8">
         <div className="mb-8">
-          <h2 className="text-2xl font-semibold text-gray-100">Good {partOfDay}, Isaac</h2>
-          <p className="text-md text-gray-300">{message}</p>
+          <h2 className="text-2xl font-semibold text-t1">Good {partOfDay}, Isaac</h2>
+          <p className="text-md text-t2">{message}</p>
         </div>
 
-        <div className="flex space-x-4 mb-8">
-          <Button onClick={handleAddNewTask} customStyle="mr-[4rem]" text="Add New Task" icon={MdOutlineAddToQueue}/>
-          <Button onClick={handleViewCalendar} customStyle="mr-[4rem]" text="View Calendar" icon={MdOutlineCalendarToday}/>
-        </div>
-
-
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-gray-100">Today's Tasks</h3>
+          <h3 className="text-xl font-semibold text-t1">Today's Tasks</h3>
           <div className="flex flex-row flex-wrap mt-[1rem] gap-4">
             {todaysTasks.map(task => (
-              <div key={task.id} className="bg-gray-600 hover:bg-gray-500 cursor-pointer  border border-gray-800 p-4 rounded-lg">
-                <h4 className="text-lg text-white font-semibold">{task.title}</h4>
-                <p className="text-gray-300">{task.description}</p>
-                <span className="text-gray-400">{task.time}</span>
+              <div key={task.id} className="bg-b3 hover:bg-b4 cursor-pointer border border-b2 p-4 rounded-lg">
+                <h4 className="text-lg text-t1 font-semibold">{task.title}</h4>
+                <p className="text-t2">{task.description}</p>
+                <span className="text-l1">{task.time}</span>
               </div>
             ))}
           </div>
         </div>
 
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-gray-100">Today's Projects</h3>
-          <div className="flex flex-row flex-wrap mt-[1rem] gap-4">
-            {todaysTasks.map(task => (
-              <div key={task.id} className="bg-gray-600 hover:bg-gray-500 cursor-pointer  border border-gray-800 p-4 rounded-lg">
-                <h4 className="text-lg text-white font-semibold">{task.title}</h4>
-                <p className="text-gray-300">{task.description}</p>
-                <span className="text-gray-400">{task.time}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold text-gray-100">Upcoming Tasks</h3>
+          <h3 className="text-xl font-semibold text-t1">Upcoming Tasks</h3>
           <div className="flex flex-row mt-[1rem] flex-wrap gap-4">
             {upcomingTasks.map(task => (
-              <div key={task.id} className="bg-gray-600 hover:bg-gray-500 cursro-pointer border border-gray-800  p-4 rounded-lg">
-                <h4 className="text-lg text-white font-semibold">{task.title}</h4>
-                <p className="text-gray-300">{task.description}</p>
-                <span className="text-gray-400">{task.date}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold text-gray-100">Upcoming Projects</h3>
-          <div className="flex flex-row mt-[1rem] flex-wrap gap-4">
-            {upcomingTasks.map(task => (
-              <div key={task.id} className="bg-gray-600 hover:bg-gray-500 cursro-pointer border border-gray-800  p-4 rounded-lg">
-                <h4 className="text-lg text-white font-semibold">{task.title}</h4>
-                <p className="text-gray-300">{task.description}</p>
-                <span className="text-gray-400">{task.date}</span>
+              <div key={task.id} className="bg-b3 hover:bg-b4 cursor-pointer border border-b2 p-4 rounded-lg">
+                <h4 className="text-lg text-t1 font-semibold">{task.title}</h4>
+                <p className="text-t2">{task.description}</p>
+                <span className="text-l1">{task.date}</span>
               </div>
             ))}
           </div>
         </div>
 
-        
-
-        {/* Articles Section */}
-        <h2 className="text-2xl mt-[3rem] border-b border-gray-600 pb-[.4rem] font-semibold text-gray-100">Articles for you</h2>
+        <h2 className="text-2xl mt-[3rem] border-b border-b2 pb-[.4rem] font-semibold text-t1">Articles for you</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4'>
           {articles.map(article => (
             <a
               key={article.id}
               href={article.url}
-              className="block bg-gray-600 hover:bg-gray-500 rounded-md p-4 transition duration-300 ease-in-out overflow-hidden"
+              className="block bg-b3 hover:bg-b4 rounded-md p-4 transition duration-300 ease-in-out overflow-hidden"
             >
               <div className="flex flex-col items-center">
                 <img src={article.imageUrl} alt={article.title} className="w-full h-40 object-cover mb-4" />
-                <h3 className="text-lg text-white font-semibold mb-2">{article.title}</h3>
-                <p className="text-sm text-gray-300">{article.description}</p>
+                <h3 className="text-lg text-t1 font-semibold mb-2">{article.title}</h3>
+                <p className="text-sm text-t2">{article.description}</p>
               </div>
             </a>
           ))}

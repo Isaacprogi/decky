@@ -24,26 +24,26 @@ const ArchivePage = () => {
   };
 
   return (
-    <div className='w-full h-full bg-gray-800 overflow-y-auto'>
-      <div className="bg-gray-700 w-full min-h-full px-4 py-8">
+    <div className='w-full h-full bg-b1 overflow-y-auto'>
+      <div className="w-full min-h-full px-4 py-8 bg-b2">
 
         <div className="mb-8">
-          <h2 className="text-2xl font-semibold text-gray-100">Archive</h2>
+          <h2 className="text-2xl font-semibold text-t1">Archive</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {archiveItems.map(item => (
-            <div key={item.id} className="bg-gray-600 hover:bg-gray-500 cursor-pointer border border-gray-800 p-4 rounded-lg flex flex-col justify-between">
+            <div key={item.id} className="cursor-pointer border border-b3 p-4 rounded-lg flex flex-col justify-between bg-b3 hover:bg-b4">
               <div>
-                <h3 className="text-lg text-white font-semibold mb-2">{item.name}</h3>
-                <p className="text-gray-300">Type: {item.type}</p>
-                <p className="text-gray-400">Archived on: {item.dateArchived}</p>
+                <h3 className="text-lg text-t1 font-semibold mb-2">{item.name}</h3>
+                <p className="text-t2">Type: {item.type}</p>
+                <p className="text-t3">Archived on: {item.dateArchived}</p>
               </div>
               <div className="flex justify-end space-x-2 mt-4">
-                <button onClick={() => restoreItem(item.id)} className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded">
+                <button onClick={() => restoreItem(item.id)} className="hover:bg-l1 text-white font-bold py-1 px-3 rounded bg-t1">
                   Restore
                 </button>
-                <button onClick={() => deleteItem(item.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded">
+                <button onClick={() => deleteItem(item.id)} className="hover:bg-l1 text-white font-bold py-1 px-3 rounded bg-t2">
                   Delete
                 </button>
               </div>

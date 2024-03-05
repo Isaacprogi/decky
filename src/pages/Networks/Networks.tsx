@@ -7,7 +7,7 @@ import Image from '../../assets/me.jpg';
 import './Networks.css'; 
 
 const SectionHeader = ({ title, onNewClick }) => (
-  <div className="flex w-full items-center justify-between">
+  <div className="flex w-full border-b pb-[.7rem] border-gray-600 items-center justify-between">
     <h2 className="font-medium text-gray-200">
       {title}
     </h2>
@@ -20,8 +20,7 @@ const OrganizationCard = ({ org }:{org:Organization}) => (
     <div className="avatar">
     <Avatar src={Image} name={org.name} />
     </div>
-    <span className="name">{org.name}</span>
-    <span className="email">{org.email}</span>
+    <span className="name">@{org.name}</span>
   </div>
 );
 

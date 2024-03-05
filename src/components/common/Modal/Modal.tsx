@@ -1,25 +1,24 @@
-import './modal.css'
+import './modal.css';
 import React from 'react';
 
 interface Props {
-    handleClose:()=>void;
+    onClose:()=>void;
     isOpen:boolean;
-    children:React.ReactNode
+    children:React.ReactNode;
 }
 
-const Modal:React.FC<Props> = (props) => {
-  return props.isOpen && (
-    <div className='w-full h-full overflow-y-auto  fixed modal z-[99999999] top-0 right-0'>
-        <div onClick={props.handleClose} className="w-full absolute   h-full"> 
-                 
+const Modal: React.FC<Props> = (props) => {
+    const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        if (event.target === event.currentTarget) {
+            props.onClose();
+        }
+    };
+
+    return props.isOpen && (
+        <div onClick={handleOverlayClick}  className='w-full h-full flex items-center justify-center fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm overflow-y-auto modal z-[99999999] top-0 right-0'>
+          {props.children}
         </div>
-        
-      <div className="w-full flex justify-center items-center    min-h-full p-[1rem] sm:p-[2rem]">
-      {props.children}
-      </div>
-        
-    </div>
-  )
+    );
 }
 
-export default Modal
+export default Modal;

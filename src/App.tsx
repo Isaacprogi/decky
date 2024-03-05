@@ -32,7 +32,9 @@ import useDeviceWidth from './hooks/useDeviceWidth';
 import MobileSettingsNavigation from './pages/Settings/MobileSettingNavigation/MobileSettingsNavigation';
 import Networks from './pages/Networks/Networks';
 
+
 import Note from './pages/Notes/Note/Note';
+import Sections from './pages/Notes/Sections/Sections';
 
 
 const App = () => {
@@ -54,7 +56,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path='/tasks' element={<Tasks />} />
           <Route path='/notes' element={<Notes />} />
-          <Route path='/notes/:name' element={<Note />} />
+          <Route path='/notes/:name/sections' element={<Sections />} />
           <Route path='/projects' element={<Projects />} />
 
 

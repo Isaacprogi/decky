@@ -1,44 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { MdOutlineAddToQueue } from 'react-icons/md';
-import Button from '../../Components/common/Button/Button';
+import Button from '../../../Components/common/Button/Button';
 import { useNavigate } from 'react-router-dom';
-import Modal from '../../Components/common/Modal/Modal';
-import RadioButton from '../../Components/common/RadioButton/RadioButton';
-import { FaPencilAlt} from 'react-icons/fa'
-import Input from '../../Components/common/Input/Input';
-import { Note } from '../../types/types';
-import { useNoteContext } from '../../hooks/useNoteContext';
+import Modal from '../../../Components/common/Modal/Modal';
+import RadioButton from '../../../Components/common/RadioButton/RadioButton';
+import { FaPencilAlt } from 'react-icons/fa'
+import Input from '../../../Components/common/Input/Input';
+import { Note } from '../../../types/types';
+import { useNoteContext } from '../../../hooks/useNoteContext';
+import { useParams } from 'react-router-dom';
 
 
 
-const Notes = () => {
+const Sections = () => {
 
   const [showConfirmModal, setShowConfirmModal] = useState<boolean>(false);
-  const [noteTitle,setNoteTitle] = useState<string>('')
+  const [noteTitle, setNoteTitle] = useState<string>('')
   const [selectedValue, setSelectedValue] = useState('');
 
-  const {setCurrentNote,getNotes,notes} = useNoteContext()
+  const { setCurrentNote, getNotes, notes, currentNote } = useNoteContext()
+
+  const { name } = useParams()
+  console.log(name)
 
 
-  useEffect(()=>{
-      getNotes()
-  },[])
+  useEffect(() => {
+    getNotes()
+  }, [])
 
 
   const navigate = useNavigate()
 
- 
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
   };
 
   const handleNavigateToNote = (note: Note) => {
     setCurrentNote(note)
-    navigate(`${note.title}/sections`)
+    navigate(`/note/${note.title}`)
   }
 
   const handleNoteTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-         setNoteTitle(e.target.value)
+    setNoteTitle(e.target.value)
   }
 
   const handleNewNote = () => {
@@ -47,10 +51,10 @@ const Notes = () => {
 
   const handleProceed = () => {
     setCurrentNote({
-      id:"1",
-      title:noteTitle,
-      category:selectedValue,
-      updatedAt:"sjsj"
+      id: "1",
+      title: noteTitle,
+      category: selectedValue,
+      updatedAt: "sjsj"
     })
     setShowConfirmModal(false)
     navigate(`${noteTitle}/sections`)
@@ -61,20 +65,27 @@ const Notes = () => {
     <div className='w-full h-full bg-gray-800 overflow-y-auto'>
       <div className="bg-gray-700 w-full min-h-full px-4 py-8">
 
-        <div className="mb-8 flex w-full items-center justify-between">
-          <h2 className="text-2xl font-semibold text-gray-100">Notes</h2>
+        <div className="mb-8 flex w-full  items-center justify-between">
+          div
+          <h2 className="text-2xl font-semibold text-gray-100">Sections</h2>
           <Button onClick={handleNewNote} customStyle="mr-[4rem]" text="New" icon={MdOutlineAddToQueue} />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {notes.map(note => (
-            <div onClick={() => handleNavigateToNote(note)} key={note.id} className="bg-gray-600 max-h-[11rem] text-ellipsis overflow-hidden hover:bg-gray-500 cursor-pointer border border-gray-800 p-4 rounded-lg">
-              <h4 className="text-lg text-white font-semibold">{note.title}</h4>
-              <p className="text-gray-300 whitespace-pre-line">{note.content}</p>
-              <span className="text-gray-400">{note.updatedAt}</span>
+          {notes.filter(note => note.id === currentNote.id).map(note => (
+            <>
+            {note.sections && note.sections.map(section => (
+                <div onClick={() => handleNavigateToNote(note)} key={note.id} className="bg-gray-600 max-h-[11rem] text-ellipsis overflow-hidden hover:bg-gray-500 cursor-pointer border border-gray-800 p-4 rounded-lg">
+                <div key={section.id}>
+                  <h5 className="text-md text-white">{section.title}</h5>
+                  <p className="text-gray-400">{section.content}</p>
+                </div>
             </div>
+              ))}
+            </>
           ))}
         </div>
+
 
         <Modal isOpen={showConfirmModal}
           onClose={() => setShowConfirmModal(false)}>
@@ -83,7 +94,7 @@ const Notes = () => {
               Select Category
             </h1>
 
-            <Input value={noteTitle} customClass='max-w-[15rem] ' onChange={handleNoteTitleChange} placeholder='title'/>
+            <Input value={noteTitle} customClass='max-w-[15rem] ' onChange={handleNoteTitleChange} placeholder='title' />
 
             <div className='flex items-center  justify-center gap-[1rem]'>
               <div className='border w-[10rem] group hover:bg-gray-600 duration-300 p-[.6rem]  rounded-md w-[10rem]'>
@@ -109,11 +120,11 @@ const Notes = () => {
             </div>
 
             <div className='h-[4rem]'>
-            {
-              selectedValue && noteTitle !== "" && <Button icon={FaPencilAlt} onClick={handleProceed}  text='Proceed'>
+              {
+                selectedValue && noteTitle !== "" && <Button icon={FaPencilAlt} onClick={handleProceed} text='Proceed'>
 
-              </Button>
-            }
+                </Button>
+              }
             </div>
           </div>
         </Modal>
@@ -124,4 +135,4 @@ const Notes = () => {
   );
 };
 
-export default Notes;
+export default Sections;

@@ -8,16 +8,39 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: rgb(255, 255, 255);
+
+
+:root {
+ --b1: #FFFFFF;
+ --b2: #F7FAFC;
+ --b3: #E2E8F0; 
+ --b4: #CBD5E0; 
+ --t1: #2D3748;
+ --t2: #4A5568;
+ --t3: #718096;
+ --l1: #E2E8F0;
 }
 
-.nav-bar{
- background-color:#040114;
+
+[data-theme="dark"] {
+   --b1: #1A202C; 
+   --b2: #2D3748;
+   --b3: #4A5568; 
+   --b4: #718096; 
+   --t1: #F7FAFC; 
+   --t2: #E2E8F0;
+   --t3: #CBD5E0;
+   --l1: #2D3748; 
 }
-:root{
-  --background:#171717;
-  --nav:#dacccc;
-  --textPrimary:#f5f5f5;
-  --textSecondary:#d4d4d4;
+
+[data-theme="Cloudscape Dream"] {
+  --b1: #2D3748;
+  --b2: #4A5568;
+  --b3: #718096;
+  --b4: #A0AEC0;
+  --t1: #F7FAFC;
+  --t2: #E2E8F0;
+  --t3: #CBD5E0;
+  --l1: #2D3748;
 }
+

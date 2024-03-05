@@ -7,7 +7,7 @@
 }
 
 .section {
-  @apply mt-8;
+  @apply mt-8 overflow-hidden;
 }
 
 .cards-container {
@@ -15,11 +15,11 @@
 }
 
 .organization-card, .link-card {
-  @apply flex flex-col items-center max-w-[7rem]  overflow-hidden;
+  @apply flex flex-col  items-center max-w-[7rem]  overflow-hidden;
 }
 
 .name {
-  @apply text-sm underline w-full text-center cursor-pointer text-ellipsis whitespace-nowrap ;
+  @apply text-[.8rem] w-full text-center cursor-pointer truncate;
 }
 
 .email, .type {
